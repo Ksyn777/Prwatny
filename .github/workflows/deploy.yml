@@ -1,20 +1,25 @@
-name: Publikacja GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Pobierz repozytorium
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Publikuj na GitHub Pages
+      - name: Build (np. npm run build)
+        run: echo "Tutaj zbuduj swoją stronę"
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./public
