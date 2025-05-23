@@ -1,0 +1,8 @@
+name: Github Action Demo
+on: [push]
+jobs:
+  First-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First-Step
+      - run: kod.py
