@@ -13,7 +13,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
 
       - name: Build (np. npm run build)
         run: echo "Tutaj zbuduj swoją stronę"
