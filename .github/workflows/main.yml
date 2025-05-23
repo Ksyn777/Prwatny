@@ -1,0 +1,27 @@
+name: Narzędzie do automatyzacji
+on:
+    pull_request:
+        branches: [main]
+jobs:
+    build_and_test:
+        runs-on: ubuntu-latest
+        steps:
+        -   name: Klonowanie Repozytorium
+            uses: actions/checkout@v3
+        
+        -   name: Ustawienie Pythona
+            uses: actions/setup-python@v4
+            with:
+                python-version: '3.10'
+            
+        -   name: Instalacja zależności
+            run:
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+        -   name:
+            run: echo "Program Działa"
+
+        -   name: Uruchomienie Pliku Python
+            run: python kod.py
+
+        
